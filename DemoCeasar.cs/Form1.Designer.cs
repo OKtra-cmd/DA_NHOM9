@@ -187,6 +187,7 @@
             this.btnNapTuDien.Text = "Tải từ điển";
             this.btnNapTuDien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNapTuDien.UseVisualStyleBackColor = true;
+            this.btnMapTuDien.Click += new System.EventHandler(this.btnMapTuDien_Click);
             // 
             // Form1
             // 
