@@ -167,18 +167,35 @@ namespace DemoCeasar
         // ================== NÚT LƯU TỪ ĐIỂN (qua giao diện) ==================
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            // Kiểm tra xem có dữ liệu không
+            if (lstResults.Items.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu để lưu!");
+                return; // Dừng nếu không có dữ liệu
+            }
+
+            // Kiểm tra xem đã brute-force và chọn KQ tốt nhất ?
+            if (lstResults.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng brute-force trước khi lưu!");
+                return; // Dừng nếu chưa có kết quả được chọn
+            }
+
+            // Lấy KQ tốt nhất (item đang được chọn trong ListBox)
+            string best = lstResults.SelectedItem.ToString();
+
+            // Tạo hộp thoại lưu file
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Text File|*.txt";
+            saveFileDialog.Filter = "Text File|*.txt"; // Chỉ cho phép lưu file .txt
             saveFileDialog.Title = "Lưu kết quả";
+
+            // chọn file và nhấn OK
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                using (StreamWriter sw = new StreamWriter(saveFileDialog.FileName))
-                {
-                    foreach (var item in lstResults.Items)
-                    {
-                        sw.WriteLine(item.ToString());
-                    }
-                }
+                // Ghi kết quả tốt nhất vào file luu
+                File.WriteAllText(saveFileDialog.FileName, best);
+
+                // Thông báo đã lưu thành công
                 MessageBox.Show("Đã lưu kết quả thành công!");
             }
         }
