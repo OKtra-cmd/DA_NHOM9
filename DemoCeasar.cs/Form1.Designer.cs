@@ -122,7 +122,6 @@
             this.btnNapTuDien.Text = "Tải từ điển";
             this.btnNapTuDien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNapTuDien.UseVisualStyleBackColor = true;
-            this.btnNapTuDien.Click += new System.EventHandler(this.btnNapTuDien_Click);
             // 
             // label1
             // 
@@ -235,4 +234,5 @@
         private System.Windows.Forms.Button btnThoat;
     }
 }
+
 
