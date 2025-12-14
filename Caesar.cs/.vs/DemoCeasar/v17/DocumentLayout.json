@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\outnh\\Downloads\\DA_NHOM9 (1)\\DemoCeasar.cs\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F6D9BC9C-7BFF-455E-A468-B527F103833B}|DemoCeasar.csproj|C:\\Users\\outnh\\Downloads\\DA_NHOM9 (1)\\DemoCeasar.cs\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F6D9BC9C-7BFF-455E-A468-B527F103833B}|DemoCeasar.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6D9BC9C-7BFF-455E-A468-B527F103833B}|DemoCeasar.csproj|c:\\users\\outnh\\downloads\\da_nhom9 (1)\\democeasar.cs\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6D9BC9C-7BFF-455E-A468-B527F103833B}|DemoCeasar.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6D9BC9C-7BFF-455E-A468-B527F103833B}|DemoCeasar.csproj|C:\\Users\\outnh\\Downloads\\DA_NHOM9 (1)\\DemoCeasar.cs\\trogiupceasar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6D9BC9C-7BFF-455E-A468-B527F103833B}|DemoCeasar.csproj|solutionrelative:trogiupceasar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\outnh\\Downloads\\DA_NHOM9 (1)\\DemoCeasar.cs\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\outnh\\Downloads\\DA_NHOM9 (1)\\DemoCeasar.cs\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwC8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T08:53:35.836Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TroGiupCeasar.cs",
+              "DocumentMoniker": "C:\\Users\\outnh\\Downloads\\DA_NHOM9 (1)\\DemoCeasar.cs\\TroGiupCeasar.cs",
+              "RelativeDocumentMoniker": "TroGiupCeasar.cs",
+              "ToolTip": "C:\\Users\\outnh\\Downloads\\DA_NHOM9 (1)\\DemoCeasar.cs\\TroGiupCeasar.cs",
+              "RelativeToolTip": "TroGiupCeasar.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAcwGYAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-13T02:02:36.397Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\outnh\\Downloads\\DA_NHOM9 (1)\\DemoCeasar.cs\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\outnh\\Downloads\\DA_NHOM9 (1)\\DemoCeasar.cs\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T23:57:47.676Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
