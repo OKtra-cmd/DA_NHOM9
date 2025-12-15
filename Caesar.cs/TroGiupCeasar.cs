@@ -65,7 +65,7 @@ namespace DemoCeasar
                 "meet","later","hello","world","test","good","night","morning"
             };
 
-            foreach (var w in macDinh)
+            foreach (string w in macDinh)
                 TuDien.Add(w);
 
             lblBest.Text = $"Đã nạp mặc định {TuDien.Count} từ";
