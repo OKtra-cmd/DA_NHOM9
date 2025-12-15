@@ -53,7 +53,7 @@ namespace DemoCeasar
             lstResults.Items.Clear();
             danhSachGiaiMa.Clear(); // Xóa danh sách cũ
 
-            var danhSach = new List<(int Khoa, string GiaiMa, int Diem)>();
+            List<(int Khoa, string GiaiMa, int Diem)> danhSach = new List<(int Khoa, string GiaiMa, int Diem)>();
 
             for (int k = 0; k < 26; k++)
             {
@@ -68,7 +68,7 @@ namespace DemoCeasar
 
             int diemMax = danhSach.Max(x => x.Diem);
 
-            var totNhat = danhSach
+            (int Khoa, string GiaiMa, int Diem) totNhat = danhSach
                 .Where(x => x.Diem == diemMax)
                 .OrderByDescending(x => troGiup.DemNguyenAm(x.GiaiMa))
                 .First();
