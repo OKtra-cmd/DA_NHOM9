@@ -41,17 +41,19 @@ namespace DemoCeasar
         //Nút Brute-force: thử tất cả khóa và chọn kết quả tốt nhất
         private void btnBrute_Click(object sender, EventArgs e)
         {
-            string chuoiMa = (txtInput.Text ?? "").Trim();
+            string chuoiMa = "";
+            if (txtInput.Text != null)
+                chuoiMa = txtInput.Text.Trim();
 
             // Kiểm tra nếu người dùng chưa nhập gì hoặc vẫn là placeholder
-            if (chuoiMa == "" || chuoiMa == "Nhập văn bản mã hóa tại đây xong bấm giải mã")
+            if (chuoiMa == "" || chuoiMa == "Nhập văn bản mã hóa tại đây xong bấm giải mã(Input)")
             {
                 MessageBox.Show("Vui lòng nhập văn bản mã hóa.");
                 return;
             }
 
             lstResults.Items.Clear();
-            danhSachGiaiMa.Clear(); // Xóa danh sách cũ
+            danhSachGiaiMa.Clear();
 
             List<(int Khoa, string GiaiMa, int Diem)> danhSach = new List<(int Khoa, string GiaiMa, int Diem)>();
 
@@ -63,17 +65,30 @@ namespace DemoCeasar
                 danhSach.Add((k, giai, diem));
                 danhSachGiaiMa.Add(giai); // Lưu toàn bộ kết quả
 
-                lstResults.Items.Add($"Khoa {k:D2}: {giai.Substring(0, Math.Min(80, giai.Length))}...");
+                lstResults.Items.Add("Khóa "+k+" :" +giai.Substring(0, Math.Min(120, giai.Length))+"...");
             }
 
-            int diemMax = danhSach.Max(x => x.Diem);
+            int diemMax = -1;
+            foreach ((int Khoa, string GiaiMa, int Diem) x in danhSach)
+            {
+                if (x.Diem > diemMax)
+                    diemMax = x.Diem;
+            }
 
-            (int Khoa, string GiaiMa, int Diem) totNhat = danhSach
-                .Where(x => x.Diem == diemMax)
-                .OrderByDescending(x => troGiup.DemNguyenAm(x.GiaiMa))
-                .First();
+            (int Khoa, string GiaiMa, int Diem) totNhat = (0, "", 0);
 
-            lblBest.Text = $"Kết quả tốt nhất: Khoa {totNhat.Khoa} (Điểm {totNhat.Diem})";
+            foreach ((int Khoa, string GiaiMa, int Diem) x in danhSach)
+            {
+                if (x.Diem == diemMax)
+                {
+                    if (totNhat.GiaiMa == "" || troGiup.DemNguyenAm(x.GiaiMa) > troGiup.DemNguyenAm(totNhat.GiaiMa))
+                    {
+                        totNhat = x;
+                    }
+                }        
+            }
+
+            lblBest.Text = "Kết quả tốt nhất: Khoa " + totNhat.Khoa+ "(Điểm "+totNhat.Diem+")";
 
             txtOutput.Text = totNhat.GiaiMa;
 
@@ -171,17 +186,17 @@ namespace DemoCeasar
         //Thiết lập placeholder mặc định khi Form vừa mở
         private void Form1_Load(object sender, EventArgs e)
         {
-            txtInput.Text = "Nhập văn bản mã hóa tại đây xong bấm giải mã";
+            txtInput.Text = "Nhập văn bản mã hóa tại đây xong bấm giải mã(Input)";
             txtInput.ForeColor = Color.Gray;
 
-            txtOutput.Text = "Kết quả giải mã sẽ hiển thị ở đây";
+            txtOutput.Text = "Kết quả giải mã sẽ hiển thị ở đây(Output)";
             txtOutput.ForeColor = Color.Black;
         }
 
         //Xóa placeholder khi người dùng bắt đầu nhập vào ô Input
         private void txtInput_Enter(object sender, EventArgs e)
         {
-            if (txtInput.Text == "Nhập văn bản mã hóa tại đây xong bấm giải mã")
+            if (txtInput.Text == "Nhập văn bản mã hóa tại đây xong bấm giải mã(Input)")
             {
                 txtInput.Text = "";
                 txtInput.ForeColor = Color.Black;
@@ -193,7 +208,7 @@ namespace DemoCeasar
         {
             if (string.IsNullOrWhiteSpace(txtInput.Text))
             {
-                txtInput.Text = "Nhập văn bản mã hóa tại đây xong bấm giải mã";
+                txtInput.Text = "Nhập văn bản mã hóa tại đây xong bấm giải mã(Input)";
                 txtInput.ForeColor = Color.Gray;
             }
         }
@@ -201,7 +216,7 @@ namespace DemoCeasar
         //Xóa placeholder khi người dùng click vào ô Output
         private void txtOutput_Enter(object sender, EventArgs e)
         {
-            if (txtOutput.Text == "Kết quả giải mã sẽ hiển thị ở đây")
+            if (txtOutput.Text == "Kết quả giải mã sẽ hiển thị ở đây(Output)")
             {
                 txtOutput.Text = "";
                 txtOutput.ForeColor = Color.Black;
@@ -213,7 +228,7 @@ namespace DemoCeasar
         {
             if (string.IsNullOrWhiteSpace(txtOutput.Text))
             {
-                txtOutput.Text = "Kết quả giải mã sẽ hiển thị ở đây";
+                txtOutput.Text = "Kết quả giải mã sẽ hiển thị ở đây(Output)";
                 txtOutput.ForeColor = Color.Gray;
             }
         }
